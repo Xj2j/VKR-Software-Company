@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="680.0" prefWidth="1073.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controller.TaskFormController">
+   <children>
+      <GridPane layoutX="14.0" layoutY="2.0" prefHeight="100.0" prefWidth="749.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="175.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="617.0" minWidth="10.0" prefWidth="574.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="№">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font></Label>
+            <TextField fx:id="idTextField" disable="true" editable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="174.0" GridPane.columnIndex="1" />
+            <Label text="Дата завершения" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePicker3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button layoutX="14.0" layoutY="597.0" mnemonicParsing="false" onAction="#onBtnUpdateAction" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #c1d3e3;" text="Сохранить">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font></Button>
+      <Button layoutX="14.0" layoutY="638.0" mnemonicParsing="false" onAction="#onBtnCancelAction" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #c1d3e3;" text="Отмена">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="reportTextArea" layoutX="14.0" layoutY="153.0" prefHeight="430.0" prefWidth="1045.0" wrapText="true">
+         <font>
+            <Font name="Verdana" size="16.0" />
+         </font></TextArea>
+      <Label layoutX="14.0" layoutY="118.0" text="Отчёт по заданию">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
