@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controller.EmployeeFormController">
+   <children>
+      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="319.0" prefWidth="746.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="440.0" minWidth="10.0" prefWidth="134.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="577.0" minWidth="0.0" prefWidth="561.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="№">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font></Label>
+            <Label text="ФИО" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font></Label>
+            <Label text="Отдел" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font></Label>
+            <Label text="Должность" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font></Label>
+            <Label text="Телефонный номер" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font></Label>
+            <Label text="Электронная почта" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font></Label>
+            <Label text="Адрес" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font></Label>
+            <TextField fx:id="idTextField" editable="false" maxWidth="172.0" prefHeight="25.0" prefWidth="257.0" GridPane.columnIndex="1" />
+            <TextField fx:id="emailTextField" maxWidth="243.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="nameTextField" prefHeight="25.0" prefWidth="311.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="departmentCB" prefHeight="25.0" prefWidth="243.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="positionCB" prefHeight="25.0" prefWidth="243.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="numberTextField" maxWidth="243.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="addressTextField" maxWidth="243.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <Button fx:id="btnSave" layoutX="25.0" layoutY="348.0" mnemonicParsing="false" onAction="#onBtnSaveAction" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #c1d3e3;" text="Сохранить">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font></Button>
+      <Button fx:id="btnCancel" layoutX="144.0" layoutY="348.0" mnemonicParsing="false" onAction="#onBtnCancelAction" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #c1d3e3;" text="Отмена">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font></Button>
+      <Label layoutX="435.0" layoutY="251.0" text="Права администратора">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="435.0" layoutY="301.0" text="Логин">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="loginTextField" layoutX="510.0" layoutY="297.0" prefHeight="25.0" prefWidth="257.0" />
+      <CheckBox fx:id="isAdminCheckBox" layoutX="629.0" layoutY="251.0" mnemonicParsing="false">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </CheckBox>
+      <Label fx:id="passwordLabel" layoutX="426.0" layoutY="119.0" text="Пароль" visible="false">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="passwordTextField" layoutX="510.0" layoutY="116.0" prefHeight="25.0" prefWidth="257.0" visible="false" />
+   </children>
+</AnchorPane>

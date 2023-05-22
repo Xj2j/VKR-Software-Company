@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1054.0" prefWidth="1839.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controller.TaskListController">
+   <children>
+      <SplitPane dividerPositions="0.5585193249863909" layoutX="-2.0" layoutY="40.0" prefHeight="656.0" prefWidth="1120.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1012.0" prefWidth="1123.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="56.0" text="Поиск">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font></Label>
+                  <TextField fx:id="searchTextField" layoutX="72.0" layoutY="53.0" prefHeight="25.0" prefWidth="453.0" />
+                  <TableView fx:id="taskTable" layoutX="-3.0" layoutY="92.0" prefHeight="488.0" prefWidth="1026.0">
+                     <columns>
+                        <TableColumn fx:id="idColumn" maxWidth="37.0" prefWidth="37.0" text="ID" />
+                        <TableColumn fx:id="titleColumn" maxWidth="331.0" prefWidth="331.0" text="Тема" />
+                        <TableColumn fx:id="statusColumn" maxWidth="147.0" prefWidth="147.0" text="Статус" />
+                        <TableColumn fx:id="dateOfStartColumn" maxWidth="127.0" prefWidth="127.0" text="Дата получения" />
+                        <TableColumn fx:id="dateOfLastColumn" maxWidth="127.0" prefWidth="127.0" text="Срок" />
+                        <TableColumn fx:id="dateOfCompletionColumn" maxWidth="127.0" prefWidth="127.0" text=" Дата завершения" />
+                        <TableColumn fx:id="editColumn" maxWidth="127.0" prefWidth="127.0" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="14.0" layoutY="22.0" prefHeight="18.0" prefWidth="58.0" text="Статус">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font></Label>
+                  <ComboBox fx:id="statusCB" layoutX="72.0" layoutY="19.0" prefHeight="25.0" prefWidth="220.0" />
+                  <ToolBar layoutX="-6.0" layoutY="582.0" prefHeight="51.0" prefWidth="1147.0" style="-fx-background-color: #c1d3e3;" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-1.0">
+                     <items>
+                        <Label prefHeight="38.0" prefWidth="234.0" text="Отчёт о выполненной задаче:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#onBtnGetStarted" prefHeight="31.0" prefWidth="228.0" text="Приступить к выполнению">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onBtnFinish" prefHeight="32.0" prefWidth="195.0" text="Завершить задачу">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                        </Button>
+                     </items>
+                  </ToolBar>
+                  <TextArea fx:id="reportTextArea" editable="false" layoutX="4.0" layoutY="644.0" maxWidth="1012.0" prefHeight="354.0" prefWidth="1012.0" wrapText="true">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1012.0" prefWidth="879.0">
+               <children>
+                  <GridPane layoutX="18.0" layoutY="68.0" prefHeight="158.0" prefWidth="681.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="134.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="410.0" minWidth="10.0" prefWidth="410.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="37.0" prefWidth="235.0" text="Описание задачи" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="38.0" prefWidth="234.0" text="Проект">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="38.0" prefWidth="234.0" text="Руководитель проекта" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="projectTitleLabel" prefHeight="38.0" prefWidth="234.0" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="headLabel" prefHeight="38.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <TextArea fx:id="descriptionTextArea" editable="false" layoutX="9.0" layoutY="226.0" maxWidth="788.0" prefHeight="782.0" prefWidth="788.0" wrapText="true" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="11.0">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font></TextArea>
+                  <Label layoutX="18.0" layoutY="14.0" prefHeight="38.0" prefWidth="234.0" text="Информация о задаче">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <Label layoutX="23.0" layoutY="15.0" text="У вас">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="newTasksLabel" layoutX="192.0" layoutY="15.0" prefHeight="18.0" prefWidth="29.0" text="0" underline="true">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <Label layoutX="85.0" layoutY="15.0" text=" новых задач: ">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="workTasksLabel" layoutX="412.0" layoutY="15.0" text="0" underline="true">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <Label layoutX="242.0" layoutY="15.0" text="задач на выполнении:">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="overdueTasksLabel" layoutX="643.0" layoutY="15.0" text="0" underline="true">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <Label layoutX="477.0" layoutY="15.0" prefHeight="18.0" prefWidth="164.0" text="просроченных задач:">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>
